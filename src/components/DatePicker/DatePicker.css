@@ -1,0 +1,12 @@
+.date-picker__container {
+    width: 250px;
+}
+
+.date-picker__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-picker__month-select {
+    border-style: none;
+}

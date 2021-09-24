@@ -1,0 +1,22 @@
+
+
+.table__contain {
+  display: flex;
+  flex-direction: column;
+}
+
+.table__head,
+.table__body {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+}
+
+.table__body {
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}

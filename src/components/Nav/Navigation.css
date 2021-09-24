@@ -1,0 +1,25 @@
+.navigation__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;    
+}
+
+.navigation__logo, .navigation__item {
+    text-decoration: none;
+    color: #000;
+}
+
+.navigation__logo:hover, .navigation__item:hover {
+    text-decoration: underline;
+}
+
+.navigation__logo--img {
+    width: 160px;
+}
+
+.navigation__logo--title {
+    font-size: 1.5rem;
+    
+}
