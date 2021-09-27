@@ -2,7 +2,12 @@ import React from "react";
 
 import "./Table.css";
 
+import TbodyCustom from "./TbodyCustom/TbodyCustom";
+
 function Table() {
+
+  const employeesData = JSON.parse(localStorage.getItem("employees"))  
+
   return (
     <div className="table__Container">
       <header>
@@ -34,6 +39,7 @@ function Table() {
           </tr>
         </thead>
         <tbody className="table__body">
+          <TbodyCustom employeesArray={employeesData}/>
           <tr>
             <td>FirstName</td>
             <td>LastName</td>

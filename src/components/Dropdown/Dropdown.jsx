@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { states } from "../../localData/states";
 
-function Dropdown() {
+function Dropdown({handleChange}) {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -12,6 +12,7 @@ function Dropdown() {
         id="state"
         name="state"
         onClick={() => setIsVisible(!isVisible)}
+        onChange={handleChange}
       >
         {states.map((state) => (
           <option value={state.name} key={state.abbreviation}>
