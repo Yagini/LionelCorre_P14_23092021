@@ -13,6 +13,4 @@ export const allMonths = [
   "December",
 ];
 
-export const dayShort = [
-    "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
-]
+export const dayShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
