@@ -12,7 +12,7 @@ function Navigation() {
         <img src={Logo} alt="Logo Wealth Health" className="navigation__logo--img" />
         <p className="navigation__logo--title">HRnet</p>
       </Link>
-      <Link className="navigation__item" to="/employee-list">
+      <Link className="custom__button" to="/employee-list">
         View Current Employees
       </Link>
     </header>

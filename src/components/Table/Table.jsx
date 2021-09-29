@@ -1,12 +1,15 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
+import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 
-import { useGlobalFilter, useTable } from "react-table";
+import { useGlobalFilter, useTable, useSortBy, usePagination } from "react-table";
 import { tableColumns } from "./tableColumns";
 import "./Table.css";
 import GlobalFilter from "./GlobalFilter";
+import PageIndex from "./PageIndex";
+import PageSize from "./PageSize";
 
 function Table() {
-  const employeesData = JSON.parse(localStorage.getItem("employees"));  
+  const employeesData = JSON.parse(localStorage.getItem("employees"));
 
   const columns = useMemo(() => tableColumns, []);
   const data = useMemo(() => employeesData, []);
@@ -15,44 +18,54 @@ function Table() {
   const tableInstance = useTable(
     {
       columns,
-      data,
+      data,      
     },
-    useGlobalFilter
+    useGlobalFilter,
+    useSortBy,
+    usePagination,    
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, state, setGlobalFilter } = tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    page,
+    nextPage,
+    previousPage,
+    canNextPage,
+    canPreviousPage,
+    //pageOptions,
+    //pageCount,
+    gotoPage,
+    prepareRow,
+    state,
+    setGlobalFilter,
+    setPageSize,
+  } = tableInstance;
 
-  const { globalFilter } = state;
+  const { globalFilter, pageIndex, pageSize } = state;
 
   return (
-    <>
-      <header>
-        <label htmlFor="entriesSelector">
-          show
-          <select id="entriesSelector">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-          entries
-        </label>
-        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+    <div className="table__container">
+      <header className="table__header">
+        <PageSize pageSize={pageSize} setPageSize={setPageSize} />
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       </header>
       <table className="table__contain" {...getTableProps()}>
         <thead className="table__head">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()} className="table__head--tr">
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()} className="table__head--th">
-                  {column.render("Header")}{" "}
+                <th {...column.getHeaderProps(column.getSortByToggleProps())} className="table__head--th">
+                  {column.render("Header")}
+                  {column.isSorted ? column.isSortedDesc ? <RiArrowDropDownLine /> : <RiArrowDropUpLine /> : " "}
                 </th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()} className="table__body">
-          {rows.map((row) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()} className="table__body--tr">
@@ -68,7 +81,17 @@ function Table() {
           })}
         </tbody>
       </table>
-    </>
+      <PageIndex
+        page={page}
+        pageIndex={pageIndex}
+        //pageCount={pageSize}
+        gotoPage={gotoPage}
+        previousPage={previousPage}
+        nextPage={nextPage}
+        canPreviousPage={canPreviousPage}
+        canNextPage={canNextPage}
+      />
+    </div>
   );
 }
 

@@ -1,22 +1,24 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+
 .navigation__logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin-top: 50px;    
+    flex-direction: row;
+    margin-top: 50px; 
+    margin-bottom: 30px;   
 }
 
-.navigation__logo, .navigation__item {
+.navigation__logo {
     text-decoration: none;
     color: #000;
 }
 
-.navigation__logo:hover, .navigation__item:hover {
-    text-decoration: underline;
-}
-
 .navigation__logo--img {
-    width: 160px;
+    width: 110px;
 }
 
 .navigation__logo--title {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import { getMonth, getYear } from "date-fns";
 import range from "lodash/range";
@@ -9,8 +9,7 @@ import "./CustomDatePicker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { allMonths } from "../../localData/calendar";
 
-function CustomDatePicker() {
-  const [startDate, setStartDate] = useState(null);
+function CustomDatePicker({startDate, setStartDate}) {  
   const years = range(1950, getYear(new Date()) + 1, 1);
   const months = allMonths;
 

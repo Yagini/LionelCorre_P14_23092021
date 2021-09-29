@@ -9,7 +9,7 @@ function EmployeeList() {
     <div className="employee__container">
       <h1>Current Employees</h1> 
       <Table />     
-      <Link to="/">Home</Link>
+      <Link to="/" className="custom__button">Home</Link>
     </div>
   );
 }

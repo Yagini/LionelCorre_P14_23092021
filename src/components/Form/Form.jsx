@@ -8,6 +8,7 @@ import { states, departments } from "../../localData/dropdownData";
 
 function Form() {
   const [modalVisibility, setModalVisibility] = useState(false);
+  const [startDate, setStartDate] = useState("")
   const [employeeForm, setEmployeeForm] = useState({
     firstName: "",
     lastName: "",
@@ -33,13 +34,13 @@ function Form() {
     setModalVisibility(!modalVisibility);
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
-    localStorage.setItem("employees", JSON.stringify(employees));
-    console.log(employees);
+    localStorage.setItem("employees", JSON.stringify(employees));    
   };
 
   const showModal = () => {
     setModalVisibility(!modalVisibility);
   };
+  
   return (
     <form onSubmit={handleSubmit} className="form__container">
       <label htmlFor="first-name">First Name</label>
@@ -49,12 +50,12 @@ function Form() {
 
       <label htmlFor="dateOfBirth">
         Date of Birth
-        <CustomDatePicker id="dateOfBirth" />
+        <CustomDatePicker id="dateOfBirth" startDate={startDate} setStartDate={setStartDate}/>
       </label>
 
       <label htmlFor="startDate">
         Start Date
-        <CustomDatePicker id="startDate" />
+        <CustomDatePicker id="startDate" startDate={startDate} setStartDate={setStartDate}/>
       </label>
 
       <fieldset className="form__address">
@@ -73,7 +74,7 @@ function Form() {
       </fieldset>
       <Dropdown label="Departements" id="departement" selectDatas={departments} handleChange={handleChange} />
 
-      <input type="submit" value="Save" />
+      <input type="submit" value="Save" className="form__button" />
       {modalVisibility ? <Modal handleClose={showModal} /> : null}
     </form>
   );

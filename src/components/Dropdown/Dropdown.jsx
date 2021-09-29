@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-function Dropdown({ selectDatas, label, id, key, handleChange }) {
+import "./Dropdown.css"
+
+function Dropdown({ selectDatas, label, id, handleChange }) {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
