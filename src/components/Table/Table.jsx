@@ -18,11 +18,11 @@ function Table() {
   const tableInstance = useTable(
     {
       columns,
-      data,      
+      data,
     },
     useGlobalFilter,
     useSortBy,
-    usePagination,    
+    usePagination
   );
 
   const {
@@ -34,8 +34,6 @@ function Table() {
     previousPage,
     canNextPage,
     canPreviousPage,
-    //pageOptions,
-    //pageCount,
     gotoPage,
     prepareRow,
     state,
@@ -82,68 +80,17 @@ function Table() {
         </tbody>
       </table>
       <PageIndex
-        page={page}
-        pageIndex={pageIndex}
-        //pageCount={pageSize}
+        data={data}
         gotoPage={gotoPage}
-        previousPage={previousPage}
-        nextPage={nextPage}
-        canPreviousPage={canPreviousPage}
         canNextPage={canNextPage}
+        canPreviousPage={canPreviousPage}
+        page={page}
+        nextPage={nextPage}
+        pageIndex={pageIndex}
+        previousPage={previousPage}
       />
     </div>
   );
 }
 
 export default Table;
-
-//code from scratch
-
-/*<div className="table__Container">
-      <header>
-        <label htmlFor="entriesSelector">
-          show
-          <select id="entriesSelector">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-          entries
-        </label>
-        Search :
-        <input type="Search" />
-      </header>
-      <table className="table__contain">
-        <thead className="table__head">
-          <tr>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>StartDate</th>
-            <th>Departements</th>
-            <th>Date of birth</th>
-            <th>Street</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-          </tr>
-        </thead>
-        <tbody className="table__body">
-          <TbodyCustom employeesArray={employeesData}/>
-          <tr>
-            <td>FirstName</td>
-            <td>LastName</td>
-            <td>StartDate</td>
-            <td>Departements</td>
-            <td>Date of birth</td>
-            <td>Street</td>
-            <td>City</td>
-            <td>State</td>
-            <td>Zip Code</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="table__footer">
-        <p>Showing 1 to 2 of entries</p>
-      </div>
-    </div>*/

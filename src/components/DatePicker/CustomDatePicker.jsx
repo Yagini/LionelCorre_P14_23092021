@@ -9,7 +9,7 @@ import "./CustomDatePicker.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { allMonths } from "../../localData/calendar";
 
-function CustomDatePicker({startDate, setStartDate}) {  
+function CustomDatePicker({ startDate, setStartDate }) {
   const years = range(1950, getYear(new Date()) + 1, 1);
   const months = allMonths;
 

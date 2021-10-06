@@ -1,6 +1,6 @@
 import React from "react";
 
-function PageIndex({ page, pageIndex, gotoPage, previousPage, nextPage, canPreviousPage, canNextPage }) {
+function PageIndex({ page, data, pageIndex, gotoPage, previousPage, nextPage, canPreviousPage, canNextPage }) {
   const handleChangePage = (event) => {
     const pageNumber = event.target.value ? Number(event.target.value) - 1 : 0;
     gotoPage(pageNumber);
@@ -9,7 +9,7 @@ function PageIndex({ page, pageIndex, gotoPage, previousPage, nextPage, canPrevi
   return (
     <div className="table__footer">
       <span className="table__entries">
-        Showing {page.length} of {page.length} entries
+        Showing {page.length} of {data.length} entries
       </span>
       <div className="table__navigation">
         <span className="table__navigation--button" onClick={() => previousPage()} disabled={!canPreviousPage}>

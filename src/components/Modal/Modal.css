@@ -45,6 +45,50 @@
   width: 30px;
 }
 
+/** Animations Spinner and fade*/
+
+.modal__spinner-loading {
+  border-radius: 50px;
+  border: 6px solid #bec786;
+  height: 50px;
+  position: relative;
+  width: 50px;
+}
+
+.modal__spinner-loading:after {
+  content: "";
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #4c640d;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  top: -6px;
+  position: absolute;
+  -webkit-animation: 1.5s linear infinite spin;
+  animation: 1.5s linear infinite spin;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/** Media Screen */
+
 @media screen and (min-width: 768px) {
   .modal__container {
     top: 720px;

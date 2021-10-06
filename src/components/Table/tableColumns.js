@@ -13,7 +13,7 @@ export const tableColumns = [
   },
   {
     Header: "Date of Birth",
-    accessor: "dateofBirth",
+    accessor: "dateOfBirth",
   },
   {
     Header: "Department",
