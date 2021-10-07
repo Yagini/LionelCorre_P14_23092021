@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 const useModal = () => {
-  const [isShowingModal, setisShowingModal] = useState(false);
+  const [showModal, setisShowingModal] = useState(false);
 
-  function showModal() {
-    setisShowingModal(!isShowingModal);
+  function setShowModal() {
+    setisShowingModal(!showModal);
   } 
   
   return {
-    isShowingModal,
-    showModal,    
+    showModal,
+    setShowModal,    
   };
 };
 

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ModalSpinner = () => {
-  const [spinnerDelay, setSpinnerDelay] = useState(0);
-
   return <div className="modal__spinner-loading"></div>;
 };
 

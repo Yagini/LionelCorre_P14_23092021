@@ -25,10 +25,17 @@
   position: relative;
   text-align: left;
   top: 250px;
-  left: 20px;
+  left: 15px;
+
   vertical-align: middle;
   width: 90%;
   z-index: 2;
+}
+
+.modal__contain {
+  overflow-y: scroll;
+  overflow-x: clip;
+  max-height: 500px;
 }
 
 .modal__close-btn {
@@ -47,12 +54,36 @@
 
 /** Animations Spinner and fade*/
 
+.modal__fade-in {
+  -webkit-animation: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 2s;
+  animation: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+.modal__fade-out {
+  -webkit-animation: fadeOutOpacity;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 2s;
+  animation: fadeOutOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
 .modal__spinner-loading {
   border-radius: 50px;
   border: 6px solid #bec786;
   height: 50px;
   position: relative;
   width: 50px;
+  top: 250px;
+  left: 140px;
 }
 
 .modal__spinner-loading:after {
@@ -67,6 +98,42 @@
   position: absolute;
   -webkit-animation: 1.5s linear infinite spin;
   animation: 1.5s linear infinite spin;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes spin {
@@ -91,28 +158,45 @@
 
 @media screen and (min-width: 768px) {
   .modal__container {
-    top: 720px;
-    left: 120px;
+    left: 110px;
+  }
+  .modal__spinner-loading {
+    left: 330px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .modal__container {
-    top: 720px;
     left: 240px;
+  }
+  .modal__spinner-loading {
+    left: 460px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .modal__container {
-    top: 720px;
-    left: 440px;
+    left: 450px;
+  }
+  .modal__spinner-loading {
+    left: 670px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .modal__container {
+    left: 680px;
+  }
+  .modal__spinner-loading {
+    left: 900px;
   }
 }
 
 @media screen and (min-width: 2560px) {
   .modal__container {
-    top: 720px;
     left: 1000px;
+  }
+  .modal__spinner-loading {
+    left: 1220px;
   }
 }
