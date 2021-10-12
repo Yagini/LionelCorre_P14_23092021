@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import CustomDatePicker from "../DatePicker/CustomDatePicker";
 import Dropdown from "../Dropdown/Dropdown";
-import Modal from "../Modal/Modal";
-import useModal from "../Modal/useModal";
+//import Modal from "../Modal/Modal";
+//import useModal from "../Modal/useModal";
 
-//import Modal from "modal-react-plugin/src/Index"
-//import useModal from "modal-react-plugin/src/components/hooks/useModal";
+import { Modal, useModal } from "modal-react-module";
+import "modal-react-module/dist/components/Modal.css";
+import "../Modal/ModalCustom.css";
 
 import "./Form.css";
 
 import { states, departments } from "../../localData/dropdownData";
 
 function Form() {
-  const { showModal, setShowModal } = useModal();
+  const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();
   const [employeeForm, setEmployeeForm] = useState({
     firstName: "",
     lastName: "",
@@ -35,6 +36,7 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setShowSpinner()
     setShowModal();
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
@@ -84,8 +86,13 @@ function Form() {
 
       <input type="submit" value="Save" className="form__button" />
 
-      <Modal showModal={showModal} setShowModal={setShowModal}>
-        <p>employee</p>   
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        showSpinner={showSpinner}
+        setShowSpinner={setShowSpinner}              
+      >
+        <p>employee created</p>
       </Modal>
     </form>
   );
