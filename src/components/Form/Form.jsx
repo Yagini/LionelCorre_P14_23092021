@@ -42,9 +42,9 @@ function Form() {
 
   return (
     <form onSubmit={handleSubmit} className="form__container">
-      <label htmlFor="first-name">First Name</label>
+      <label htmlFor="firstName">First Name</label>
       <input type="text" name="firstName" id="firstName" value={employeeForm.firstName} onChange={handleChange} />
-      <label htmlFor="last-name">Last Name</label>
+      <label htmlFor="lasName">Last Name</label>
       <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
 
       <label htmlFor="dateOfBirth">
@@ -76,7 +76,7 @@ function Form() {
 
         <Dropdown label="States" id="state" selectDatas={states} handleChange={handleChange} />
 
-        <label htmlFor="zip-code">Zip Code</label>
+        <label htmlFor="zipCode">Zip Code</label>
         <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} />
       </fieldset>
       <Dropdown label="Departements" id="departement" selectDatas={departments} handleChange={handleChange} />
