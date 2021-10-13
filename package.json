@@ -1,4 +1,4 @@
-{  
+{
   "name": "p14-react",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "modal-react-module": "^0.2.4",
+    "modal-react-module": "^0.2.6",
     "react": "^17.0.2",
     "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
@@ -16,7 +16,7 @@
     "react-table": "^7.7.0",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {    
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

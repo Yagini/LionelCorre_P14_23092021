@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import CustomDatePicker from "../DatePicker/CustomDatePicker";
 import Dropdown from "../Dropdown/Dropdown";
-//import Modal from "../Modal/Modal";
-//import useModal from "../Modal/useModal";
 
 import { Modal, useModal } from "modal-react-module";
 import "modal-react-module/dist/components/Modal.css";
-import "../Modal/ModalCustom.css";
 
 import "./Form.css";
 
@@ -53,7 +50,7 @@ function Form() {
       <label htmlFor="dateOfBirth">
         Date of Birth
         <CustomDatePicker
-          id="dateOfBirth"
+          //id="dateOfBirth"
           startDate={employeeForm.dateOfBirth}
           setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
         />
@@ -62,7 +59,7 @@ function Form() {
       <label htmlFor="startDate">
         Start Date
         <CustomDatePicker
-          id="startDate"
+          //id="startDate"
           startDate={employeeForm.startDate}
           setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
         />

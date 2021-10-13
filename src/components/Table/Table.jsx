@@ -4,13 +4,13 @@ import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { useGlobalFilter, useTable, useSortBy, usePagination } from "react-table";
 import { tableColumns } from "./tableColumns";
 import "./Table.css";
-import GlobalFilter from "./GlobalFilter";
+import { GlobalFilter } from "./GlobalFilter";
 import PageIndex from "./PageIndex";
 import PageSize from "./PageSize";
 
 function Table() {
   const employeesData = JSON.parse(localStorage.getItem("employees"));
-
+  
   const columns = useMemo(() => tableColumns, []);
   const data = useMemo(() => employeesData, []);
 
@@ -49,6 +49,7 @@ function Table() {
         <PageSize pageSize={pageSize} setPageSize={setPageSize} />
         <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       </header>
+
       <table className="table__contain" {...getTableProps()}>
         <thead className="table__head">
           {headerGroups.map((headerGroup) => (

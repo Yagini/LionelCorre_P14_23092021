@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 export const tableColumns = [
   {
     Header: "First Name",
@@ -10,10 +12,12 @@ export const tableColumns = [
   {
     Header: "Start Date",
     accessor: "startDate",
+    Cell: ({value}) => {return format(new Date(value), 'yyyy-MM-dd')}
   },
   {
     Header: "Date of Birth",
     accessor: "dateOfBirth",
+    Cell: ({value}) => {return format(new Date(value), 'yyyy-MM-dd')}
   },
   {
     Header: "Department",
