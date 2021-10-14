@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/LionelCorre_P14_23092021/static/css/main.9e319a23.chunk.css",
-    "main.js": "/LionelCorre_P14_23092021/static/js/main.fa0141fa.chunk.js",
-    "main.js.map": "/LionelCorre_P14_23092021/static/js/main.fa0141fa.chunk.js.map",
-    "runtime-main.js": "/LionelCorre_P14_23092021/static/js/runtime-main.db87b4a9.js",
-    "runtime-main.js.map": "/LionelCorre_P14_23092021/static/js/runtime-main.db87b4a9.js.map",
-    "static/css/2.b0a992f5.chunk.css": "/LionelCorre_P14_23092021/static/css/2.b0a992f5.chunk.css",
-    "static/js/2.9dce3e31.chunk.js": "/LionelCorre_P14_23092021/static/js/2.9dce3e31.chunk.js",
-    "static/js/2.9dce3e31.chunk.js.map": "/LionelCorre_P14_23092021/static/js/2.9dce3e31.chunk.js.map",
-    "static/js/3.0a9da204.chunk.js": "/LionelCorre_P14_23092021/static/js/3.0a9da204.chunk.js",
-    "static/js/3.0a9da204.chunk.js.map": "/LionelCorre_P14_23092021/static/js/3.0a9da204.chunk.js.map",
+    "main.css": "/LionelCorre_P14_23092021/static/css/main.47661f0e.chunk.css",
+    "main.js": "/LionelCorre_P14_23092021/static/js/main.29ded48b.chunk.js",
+    "main.js.map": "/LionelCorre_P14_23092021/static/js/main.29ded48b.chunk.js.map",
+    "runtime-main.js": "/LionelCorre_P14_23092021/static/js/runtime-main.64e50b41.js",
+    "runtime-main.js.map": "/LionelCorre_P14_23092021/static/js/runtime-main.64e50b41.js.map",
+    "static/css/2.0c14853c.chunk.css": "/LionelCorre_P14_23092021/static/css/2.0c14853c.chunk.css",
+    "static/js/2.b7dae8ca.chunk.js": "/LionelCorre_P14_23092021/static/js/2.b7dae8ca.chunk.js",
+    "static/js/2.b7dae8ca.chunk.js.map": "/LionelCorre_P14_23092021/static/js/2.b7dae8ca.chunk.js.map",
+    "static/js/3.53d2883f.chunk.js": "/LionelCorre_P14_23092021/static/js/3.53d2883f.chunk.js",
+    "static/js/3.53d2883f.chunk.js.map": "/LionelCorre_P14_23092021/static/js/3.53d2883f.chunk.js.map",
     "index.html": "/LionelCorre_P14_23092021/index.html",
-    "static/css/2.b0a992f5.chunk.css.map": "/LionelCorre_P14_23092021/static/css/2.b0a992f5.chunk.css.map",
-    "static/css/main.9e319a23.chunk.css.map": "/LionelCorre_P14_23092021/static/css/main.9e319a23.chunk.css.map",
-    "static/js/2.9dce3e31.chunk.js.LICENSE.txt": "/LionelCorre_P14_23092021/static/js/2.9dce3e31.chunk.js.LICENSE.txt",
-    "static/media/logo.05a3590d.png": "/LionelCorre_P14_23092021/static/media/logo.05a3590d.png"
+    "static/css/2.0c14853c.chunk.css.map": "/LionelCorre_P14_23092021/static/css/2.0c14853c.chunk.css.map",
+    "static/css/main.47661f0e.chunk.css.map": "/LionelCorre_P14_23092021/static/css/main.47661f0e.chunk.css.map",
+    "static/js/2.b7dae8ca.chunk.js.LICENSE.txt": "/LionelCorre_P14_23092021/static/js/2.b7dae8ca.chunk.js.LICENSE.txt",
+    "static/media/logo.48011b46.webp": "/LionelCorre_P14_23092021/static/media/logo.48011b46.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.db87b4a9.js",
-    "static/css/2.b0a992f5.chunk.css",
-    "static/js/2.9dce3e31.chunk.js",
-    "static/css/main.9e319a23.chunk.css",
-    "static/js/main.fa0141fa.chunk.js"
+    "static/js/runtime-main.64e50b41.js",
+    "static/css/2.0c14853c.chunk.css",
+    "static/js/2.b7dae8ca.chunk.js",
+    "static/css/main.47661f0e.chunk.css",
+    "static/js/main.29ded48b.chunk.js"
   ]
 }
