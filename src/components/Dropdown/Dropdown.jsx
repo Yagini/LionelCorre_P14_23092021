@@ -7,7 +7,7 @@ function Dropdown({ selectDatas, label, id, handleChange }) {
 
   return (
     <div className="form__container dropdown__container">
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <select className="dropdown__list" id={id} onClick={() => setIsVisible(!isVisible)} onChange={handleChange}>
         {selectDatas.map((data) => (
           <option value={data.name} key={data.abbreviation}>

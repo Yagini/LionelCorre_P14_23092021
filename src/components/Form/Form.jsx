@@ -48,21 +48,19 @@ function Form() {
         <label htmlFor="lastName">Last Name</label>
         <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
 
-        <label htmlFor="dateOfBirth">
-          Date of Birth
-          <CustomDatePicker
-            startDate={employeeForm.dateOfBirth}
-            setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
-          />
-        </label>
+        <label htmlFor="dateOfBirth">Date of Birth</label>
+        <CustomDatePicker
+          id="startDate"
+          startDate={employeeForm.dateOfBirth}
+          setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
+        />
 
-        <label htmlFor="startDate">
-          Start Date
-          <CustomDatePicker
-            startDate={employeeForm.startDate}
-            setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
-          />
-        </label>
+        <label htmlFor="startDate">Start Date</label>
+        <CustomDatePicker
+          id="startDate"
+          startDate={employeeForm.startDate}
+          setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
+        />
 
         <fieldset className="form__address">
           <legend>Address</legend>
