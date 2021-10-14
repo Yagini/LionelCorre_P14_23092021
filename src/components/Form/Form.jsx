@@ -32,7 +32,7 @@ function Form() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();    
+    event.preventDefault();
     setShowSpinner();
     setShowModal();
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
@@ -40,56 +40,64 @@ function Form() {
     localStorage.setItem("employees", JSON.stringify(employees));
   };
 
-  return (   
-    <form onSubmit={handleSubmit} className="form__container">
-      <label htmlFor="firstName">First Name</label>
-      <input type="text" name="firstName" id="firstName" value={employeeForm.firstName} onChange={handleChange} />
-      <label htmlFor="lastName">Last Name</label>
-      <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="form__container">
+        <label htmlFor="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" value={employeeForm.firstName} onChange={handleChange} />
+        <label htmlFor="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
 
-      <label htmlFor="dateOfBirth">
-        Date of Birth
-        <CustomDatePicker
-          startDate={employeeForm.dateOfBirth}
-          setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
+        <label htmlFor="dateOfBirth">
+          Date of Birth
+          <CustomDatePicker
+            startDate={employeeForm.dateOfBirth}
+            setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
+          />
+        </label>
+
+        <label htmlFor="startDate">
+          Start Date
+          <CustomDatePicker
+            startDate={employeeForm.startDate}
+            setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
+          />
+        </label>
+
+        <fieldset className="form__address">
+          <legend>Address</legend>
+
+          <label htmlFor="street">Street</label>
+          <input type="text" id="street" value={employeeForm.street} onChange={handleChange} />
+
+          <label htmlFor="city">City</label>
+          <input type="text" id="city" value={employeeForm.city} onChange={handleChange} />
+
+          <Dropdown label="States" id="state" selectDatas={states} handleChange={handleChange} />
+
+          <label htmlFor="zipCode">Zip Code</label>
+          <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} />
+        </fieldset>
+        <Dropdown
+          label="Departments"
+          id="department"
+          selectDatas={departments}
+          value={employeeForm.department}
+          handleChange={handleChange}
         />
-      </label>
 
-      <label htmlFor="startDate">
-        Start Date
-        <CustomDatePicker
-          startDate={employeeForm.startDate}
-          setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
-        />
-      </label>
+        <input type="submit" value="Save" className="form__button" />
 
-      <fieldset className="form__address">
-        <legend>Address</legend>
-
-        <label htmlFor="street">Street</label>
-        <input type="text" id="street" value={employeeForm.street} onChange={handleChange} />
-
-        <label htmlFor="city">City</label>
-        <input type="text" id="city" value={employeeForm.city} onChange={handleChange} />
-
-        <Dropdown label="States" id="state" selectDatas={states} handleChange={handleChange} />
-
-        <label htmlFor="zipCode">Zip Code</label>
-        <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} />
-      </fieldset>
-      <Dropdown label="Departments" id="department" selectDatas={departments} value={employeeForm.department} handleChange={handleChange} />      
-
-      <input type="submit" value="Save" className="form__button" />
-
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        showSpinner={showSpinner}
-        setShowSpinner={setShowSpinner}
-      >
-        <p>employee created</p>
-      </Modal>
-    </form>    
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          showSpinner={showSpinner}
+          setShowSpinner={setShowSpinner}
+        >
+          <p>employee created</p>
+        </Modal>
+      </form>
+    </div>
   );
 }
 

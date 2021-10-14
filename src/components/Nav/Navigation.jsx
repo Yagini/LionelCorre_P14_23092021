@@ -6,7 +6,6 @@ import Logo from "../../assets/logo.webp";
 import "./Navigation.css";
 
 function Navigation() {
-  
   return (
     <header className="navigation">
       <Link className="navigation__logo" to="/">
@@ -15,7 +14,7 @@ function Navigation() {
       </Link>
       <Link className="custom__button" to="/employee-list">
         View Current Employees
-      </Link>      
+      </Link>
     </header>
   );
 }
