@@ -238,6 +238,7 @@ export const states = [
 ];
 
 export const departments = [
+  { abbreviation: "NO", name:"--"},
   { abbreviation: "SA", name: "Sales" },
   { abbreviation: "MARK", name: "Marketing" },
   { abbreviation: "ENGI", name: "Engineering" },

@@ -21,22 +21,22 @@ export const tableColumns = [
   },
   {
     Header: "Department",
-    accessor: "street",
+    accessor: "department",
   },
   {
     Header: "Street",
-    accessor: "city",
+    accessor: "street",
   },
   {
     Header: "City",
-    accessor: "state",
+    accessor: "city",
   },
   {
     Header: "State",
-    accessor: "zipCode",
+    accessor: "state",
   },
   {
     Header: "Zip Code",
-    accessor: "departement",
+    accessor: "zipCode",
   },
 ];

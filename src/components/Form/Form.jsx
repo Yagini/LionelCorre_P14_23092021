@@ -32,25 +32,24 @@ function Form() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setShowSpinner()
+    event.preventDefault();    
+    setShowSpinner();
     setShowModal();
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
     localStorage.setItem("employees", JSON.stringify(employees));
   };
 
-  return (
+  return (   
     <form onSubmit={handleSubmit} className="form__container">
       <label htmlFor="firstName">First Name</label>
       <input type="text" name="firstName" id="firstName" value={employeeForm.firstName} onChange={handleChange} />
-      <label htmlFor="lasName">Last Name</label>
+      <label htmlFor="lastName">Last Name</label>
       <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
 
       <label htmlFor="dateOfBirth">
         Date of Birth
         <CustomDatePicker
-          //id="dateOfBirth"
           startDate={employeeForm.dateOfBirth}
           setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
         />
@@ -59,7 +58,6 @@ function Form() {
       <label htmlFor="startDate">
         Start Date
         <CustomDatePicker
-          //id="startDate"
           startDate={employeeForm.startDate}
           setStartDate={(date) => setEmployeeForm({ ...employeeForm, startDate: date })}
         />
@@ -79,7 +77,7 @@ function Form() {
         <label htmlFor="zipCode">Zip Code</label>
         <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} />
       </fieldset>
-      <Dropdown label="Departements" id="departement" selectDatas={departments} handleChange={handleChange} />
+      <Dropdown label="Departments" id="department" selectDatas={departments} value={employeeForm.department} handleChange={handleChange} />      
 
       <input type="submit" value="Save" className="form__button" />
 
@@ -87,11 +85,11 @@ function Form() {
         showModal={showModal}
         setShowModal={setShowModal}
         showSpinner={showSpinner}
-        setShowSpinner={setShowSpinner}              
+        setShowSpinner={setShowSpinner}
       >
         <p>employee created</p>
       </Modal>
-    </form>
+    </form>    
   );
 }
 
