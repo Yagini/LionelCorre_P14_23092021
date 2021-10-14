@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LionelCorre_P14_23092021/static/css/main.47661f0e.chunk.css",
-    "main.js": "/LionelCorre_P14_23092021/static/js/main.29ded48b.chunk.js",
-    "main.js.map": "/LionelCorre_P14_23092021/static/js/main.29ded48b.chunk.js.map",
+    "main.js": "/LionelCorre_P14_23092021/static/js/main.b99b6a88.chunk.js",
+    "main.js.map": "/LionelCorre_P14_23092021/static/js/main.b99b6a88.chunk.js.map",
     "runtime-main.js": "/LionelCorre_P14_23092021/static/js/runtime-main.64e50b41.js",
     "runtime-main.js.map": "/LionelCorre_P14_23092021/static/js/runtime-main.64e50b41.js.map",
     "static/css/2.0c14853c.chunk.css": "/LionelCorre_P14_23092021/static/css/2.0c14853c.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.0c14853c.chunk.css",
     "static/js/2.b7dae8ca.chunk.js",
     "static/css/main.47661f0e.chunk.css",
-    "static/js/main.29ded48b.chunk.js"
+    "static/js/main.b99b6a88.chunk.js"
   ]
 }
