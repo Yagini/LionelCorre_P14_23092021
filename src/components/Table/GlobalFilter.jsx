@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const GlobalFilter = ({ filter, setFilter }) => {
   return (
@@ -12,3 +13,9 @@ export const GlobalFilter = ({ filter, setFilter }) => {
     </span>
   );
 };
+
+GlobalFilter.propTypes = {
+  filter: PropTypes.string,
+  setFilter: PropTypes.func.isRequired,  
+};
+

@@ -10,7 +10,7 @@ import "./Form.css";
 import { states, departments } from "../../localData/dropdownData";
 
 function Form() {
-  const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();
+  const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();  
   const [employeeForm, setEmployeeForm] = useState({
     firstName: "",
     lastName: "",
@@ -34,7 +34,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowSpinner();
-    setShowModal();
+    setShowModal();    
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
     localStorage.setItem("employees", JSON.stringify(employees));
@@ -44,9 +44,24 @@ function Form() {
     <div>
       <form onSubmit={handleSubmit} className="form__container">
         <label htmlFor="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" value={employeeForm.firstName} onChange={handleChange} />
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          value={employeeForm.firstName}
+          onChange={handleChange}
+          required
+        />
+
         <label htmlFor="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" value={employeeForm.lastName} onChange={handleChange} />
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={employeeForm.lastName}
+          onChange={handleChange}
+          required
+        />
 
         <label htmlFor="dateOfBirth">Date of Birth</label>
         <CustomDatePicker
@@ -66,21 +81,25 @@ function Form() {
           <legend>Address</legend>
 
           <label htmlFor="street">Street</label>
-          <input type="text" id="street" value={employeeForm.street} onChange={handleChange} />
+          <input type="text" id="street" value={employeeForm.street} onChange={handleChange} required />
 
           <label htmlFor="city">City</label>
-          <input type="text" id="city" value={employeeForm.city} onChange={handleChange} />
+          <input type="text" id="city" value={employeeForm.city} onChange={handleChange} required />
 
-          <Dropdown label="States" id="state" selectDatas={states} handleChange={handleChange} />
+          <Dropdown
+            label="States"
+            id="state"
+            selectDatas={states}            
+            handleChange={handleChange}
+          />
 
           <label htmlFor="zipCode">Zip Code</label>
-          <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} />
+          <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} required />
         </fieldset>
         <Dropdown
           label="Departments"
           id="department"
-          selectDatas={departments}
-          value={employeeForm.department}
+          selectDatas={departments}          
           handleChange={handleChange}
         />
 

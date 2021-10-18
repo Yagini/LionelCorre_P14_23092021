@@ -9,7 +9,7 @@ import PageIndex from "./PageIndex";
 import PageSize from "./PageSize";
 
 function Table() {
-  const employeesData = JSON.parse(localStorage.getItem("employees"));
+  const employeesData = JSON.parse(localStorage.getItem("employees")) || [];  
 
   const columns = useMemo(() => tableColumns, []);
   const data = useMemo(() => employeesData, []);

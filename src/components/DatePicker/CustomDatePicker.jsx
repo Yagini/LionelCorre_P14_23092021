@@ -1,13 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import DatePicker from "react-datepicker";
 import { getMonth, getYear } from "date-fns";
 import range from "lodash/range";
+import { allMonths } from "../../localData/calendar";
 
 import { FaCaretLeft, FaCaretRight, FaHome } from "react-icons/fa";
 
 import "./CustomDatePicker.css";
 import "react-datepicker/dist/react-datepicker.css";
-import { allMonths } from "../../localData/calendar";
 
 function CustomDatePicker({ startDate, setStartDate }) {
   const years = range(1950, getYear(new Date()) + 1, 1);
@@ -59,9 +61,14 @@ function CustomDatePicker({ startDate, setStartDate }) {
         showPopperArrow={false}
         selected={startDate}
         onChange={(date) => setStartDate(date)}
+        required
       />
     </div>
   );
 }
+
+CustomDatePicker.propTypes = {  
+  setStartDate: PropTypes.func.isRequired,
+};
 
 export default CustomDatePicker;

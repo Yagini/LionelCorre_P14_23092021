@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function PageIndex({ page, data, pageIndex, gotoPage, previousPage, nextPage, canPreviousPage, canNextPage }) {
   const handleChangePage = (event) => {
@@ -28,5 +29,16 @@ function PageIndex({ page, data, pageIndex, gotoPage, previousPage, nextPage, ca
     </div>
   );
 }
+
+PageIndex.propTypes = {
+  page: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  pageIndex: PropTypes.number.isRequired,
+  gotoPage: PropTypes.func.isRequired,
+  previousPage: PropTypes.func.isRequired,
+  nextPage: PropTypes.func.isRequired,
+  canPreviousPage: PropTypes.bool.isRequired,
+  canNextPage: PropTypes.bool.isRequired,
+};
 
 export default PageIndex;
