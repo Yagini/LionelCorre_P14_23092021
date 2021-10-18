@@ -61,7 +61,7 @@ function CustomDatePicker({ startDate, setStartDate }) {
         showPopperArrow={false}
         selected={startDate}
         onChange={(date) => setStartDate(date)}
-        required
+        required        
       />
     </div>
   );

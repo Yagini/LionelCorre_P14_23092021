@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import CustomDatePicker from "../DatePicker/CustomDatePicker";
+
 import Dropdown from "../Dropdown/Dropdown";
 
 import { Modal, useModal } from "modal-react-module";
@@ -10,7 +12,7 @@ import "./Form.css";
 import { states, departments } from "../../localData/dropdownData";
 
 function Form() {
-  const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();  
+  const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();
   const [employeeForm, setEmployeeForm] = useState({
     firstName: "",
     lastName: "",
@@ -34,7 +36,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowSpinner();
-    setShowModal();    
+    setShowModal();
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
     localStorage.setItem("employees", JSON.stringify(employees));
@@ -65,7 +67,7 @@ function Form() {
 
         <label htmlFor="dateOfBirth">Date of Birth</label>
         <CustomDatePicker
-          id="startDate"
+          id="dateOfBirth"
           startDate={employeeForm.dateOfBirth}
           setStartDate={(date) => setEmployeeForm({ ...employeeForm, dateOfBirth: date })}
         />
@@ -86,22 +88,12 @@ function Form() {
           <label htmlFor="city">City</label>
           <input type="text" id="city" value={employeeForm.city} onChange={handleChange} required />
 
-          <Dropdown
-            label="States"
-            id="state"
-            selectDatas={states}            
-            handleChange={handleChange}
-          />
+          <Dropdown label="States" id="state" selectDatas={states} handleChange={handleChange} />
 
           <label htmlFor="zipCode">Zip Code</label>
           <input type="number" id="zipCode" value={employeeForm.zipCode} onChange={handleChange} required />
         </fieldset>
-        <Dropdown
-          label="Departments"
-          id="department"
-          selectDatas={departments}          
-          handleChange={handleChange}
-        />
+        <Dropdown label="Departments" id="department" selectDatas={departments} handleChange={handleChange} />
 
         <input type="submit" value="Save" className="form__button" />
 

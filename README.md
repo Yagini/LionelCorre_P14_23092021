@@ -34,7 +34,7 @@ Recommended IDE :
     ```
 
 
-3. launch front-end (port 3001 by default):
+3. launch front-end (port 3000 by default):
 
     ```
     npm start
