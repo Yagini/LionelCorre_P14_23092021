@@ -17,7 +17,7 @@ function Dropdown({ selectDatas, label, id, handleChange }) {
         required
       >
         {selectDatas.map((data) => (
-          <option value={data.name} key={data.abbreviation}>
+          <option value={data.value} key={data.abbreviation}>
             {data.name}
           </option>
         ))}

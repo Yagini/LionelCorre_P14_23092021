@@ -36,7 +36,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowSpinner();
-    setShowModal();
+    setShowModal();         
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
     localStorage.setItem("employees", JSON.stringify(employees));

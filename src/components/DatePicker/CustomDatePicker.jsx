@@ -11,13 +11,14 @@ import { FaCaretLeft, FaCaretRight, FaHome } from "react-icons/fa";
 import "./CustomDatePicker.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-function CustomDatePicker({ startDate, setStartDate }) {
+function CustomDatePicker({ id, startDate, setStartDate }) {
   const years = range(1950, getYear(new Date()) + 1, 1);
   const months = allMonths;
 
   return (
     <div className="date-picker__container">
       <DatePicker
+        id={id}
         className="date-picker__container"
         renderCustomHeader={({
           date,
