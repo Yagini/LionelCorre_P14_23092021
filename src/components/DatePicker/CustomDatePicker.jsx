@@ -11,8 +11,14 @@ import { FaCaretLeft, FaCaretRight, FaHome } from "react-icons/fa";
 import "./CustomDatePicker.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+/**
+ * datePicker component based on react-datepicker
+ * @param { id, startDate, setStartDate } props the datePicker props
+ * @returns render
+ */
+
 function CustomDatePicker({ id, startDate, setStartDate }) {
-  const years = range(1950, getYear(new Date()) + 1, 1);
+  const years = range(1920, getYear(new Date()) + 1, 1);
   const months = allMonths;
 
   return (
@@ -22,7 +28,6 @@ function CustomDatePicker({ id, startDate, setStartDate }) {
         className="date-picker__container"
         renderCustomHeader={({
           date,
-          openToDate,
           changeMonth,
           changeYear,
           decreaseMonth,
@@ -32,7 +37,6 @@ function CustomDatePicker({ id, startDate, setStartDate }) {
         }) => (
           <div className="date-picker__header">
             <FaCaretLeft onClick={decreaseMonth} disabled={prevMonthButtonDisabled} />
-            <FaHome onClick={openToDate} />
             <select
               className="date-picker__select"
               value={months[getMonth(date)]}
@@ -58,17 +62,18 @@ function CustomDatePicker({ id, startDate, setStartDate }) {
             <FaCaretRight onClick={increaseMonth} disabled={nextMonthButtonDisable} />
           </div>
         )}
+        todayButton={<FaHome />}
         useWeekdaysShort={true}
         showPopperArrow={false}
         selected={startDate}
         onChange={(date) => setStartDate(date)}
-        required        
+        required
       />
     </div>
   );
 }
 
-CustomDatePicker.propTypes = {  
+CustomDatePicker.propTypes = {
   setStartDate: PropTypes.func.isRequired,
 };
 

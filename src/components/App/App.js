@@ -3,10 +3,11 @@ import Homepage from "../../pages/Homepage/Homepage";
 import EmployeeList from "../../pages/Employee/EmployeeList";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-
+/**
+ * App component manage the route
+ * @returns route
+ */
 function App() {
-  
-
   return (
     <div className="App">
       <BrowserRouter>

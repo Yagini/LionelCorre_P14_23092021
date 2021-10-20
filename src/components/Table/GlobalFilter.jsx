@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const GlobalFilter = ({ filter, setFilter }) => {
   return (
     <span className="table__header--search">
-      Search : {' '}
+      Search :{" "}
       <input
         value={filter || ""}
         onChange={(event) => setFilter(event.target.value)}
@@ -16,6 +16,5 @@ export const GlobalFilter = ({ filter, setFilter }) => {
 
 GlobalFilter.propTypes = {
   filter: PropTypes.string,
-  setFilter: PropTypes.func.isRequired,  
+  setFilter: PropTypes.func.isRequired,
 };
-

@@ -1,13 +1,14 @@
 .date-picker__container {
-    width: 250px;
+  width: 250px;
 }
 
 .date-picker__header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .date-picker__select {
-    border-style: none;
-    background-color: #f0f0f0;
+  border-style: none;
+  background-color: #f0f0f0;
 }

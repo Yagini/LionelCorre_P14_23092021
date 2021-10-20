@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 
 import "./Dropdown.css";
 
+/**
+ * The Dropdown component
+ * @param {selectDatas, label, id, handleChange} props the props of the Dropdown component
+ * @returns
+ */
 function Dropdown({ selectDatas, label, id, handleChange }) {
   const [isVisible, setIsVisible] = useState(false);
 

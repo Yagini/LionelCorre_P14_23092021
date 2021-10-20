@@ -5,6 +5,10 @@ import Logo from "../../assets/logo.webp";
 
 import "./Navigation.css";
 
+/**
+ * Navigation component
+ * @returns render
+ */
 function Navigation() {
   return (
     <header className="navigation">

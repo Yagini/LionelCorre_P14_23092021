@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PageSize({pageSize, setPageSize}) {
+function PageSize({ pageSize, setPageSize }) {
   return (
     <label htmlFor="entriesSelector" className="table__header--selector">
       show
@@ -20,6 +20,6 @@ function PageSize({pageSize, setPageSize}) {
 PageSize.propTypes = {
   pageSize: PropTypes.number.isRequired,
   setPageSize: PropTypes.func.isRequired,
-}
+};
 
-export default PageSize
+export default PageSize;

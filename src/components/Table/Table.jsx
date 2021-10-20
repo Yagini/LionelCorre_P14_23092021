@@ -2,19 +2,24 @@ import React, { useMemo } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 
 import { useGlobalFilter, useTable, useSortBy, usePagination } from "react-table";
+
 import { tableColumns } from "./tableColumns";
-import "./Table.css";
 import { GlobalFilter } from "./GlobalFilter";
 import PageIndex from "./PageIndex";
 import PageSize from "./PageSize";
 
+import "./Table.css";
+
 function Table() {
   const employeesData = JSON.parse(localStorage.getItem("employees")) || [];
 
+  //hook useMemo for optimize the react speed. useMemo store a value in the memory and
+  //not re-excute if the value not change
   const columns = useMemo(() => tableColumns, []);
   const data = useMemo(() => employeesData, []);
 
-  //shorthand syntax columns: columns
+  //Hooks
+  //shorthand syntax columns: columns & data: data
   const tableInstance = useTable(
     {
       columns,
@@ -25,6 +30,9 @@ function Table() {
     usePagination
   );
 
+  /**
+   * Props using in the Table Component
+   */
   const {
     getTableProps,
     getTableBodyProps,

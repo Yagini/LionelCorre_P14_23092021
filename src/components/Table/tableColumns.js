@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import { format } from "date-fns";
 
 export const tableColumns = [
   {
@@ -12,12 +12,16 @@ export const tableColumns = [
   {
     Header: "Start Date",
     accessor: "startDate",
-    Cell: ({value}) => {return format(new Date(value), 'yyyy-MM-dd')}
+    Cell: ({ value }) => {
+      return format(new Date(value), "yyyy-MM-dd");
+    },
   },
   {
     Header: "Date of Birth",
     accessor: "dateOfBirth",
-    Cell: ({value}) => {return format(new Date(value), 'yyyy-MM-dd')}
+    Cell: ({ value }) => {
+      return format(new Date(value), "yyyy-MM-dd");
+    },
   },
   {
     Header: "Department",

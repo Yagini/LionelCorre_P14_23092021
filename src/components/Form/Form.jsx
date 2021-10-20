@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 import CustomDatePicker from "../DatePicker/CustomDatePicker";
-
 import Dropdown from "../Dropdown/Dropdown";
-
 import { Modal, useModal } from "modal-react-module";
 import "modal-react-module/dist/components/Modal.css";
 
@@ -11,6 +9,10 @@ import "./Form.css";
 
 import { states, departments } from "../../localData/dropdownData";
 
+/**
+ * Form component, catch the data on input and store
+ * @returns render
+ */
 function Form() {
   const [showModal, setShowModal, showSpinner, setShowSpinner] = useModal();
   const [employeeForm, setEmployeeForm] = useState({
@@ -36,7 +38,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowSpinner();
-    setShowModal();         
+    setShowModal();
     let employees = JSON.parse(localStorage.getItem("employees")) || [];
     employees.push(employeeForm);
     localStorage.setItem("employees", JSON.stringify(employees));

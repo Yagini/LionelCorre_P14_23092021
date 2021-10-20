@@ -24,7 +24,7 @@
 }
 
 .table__header--input {
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
 .table__contain {
@@ -38,7 +38,7 @@
 .table__footer {
   display: flex;
   justify-content: space-between;
-  border-style: none
+  border-style: none;
 }
 .table__navigation {
   display: flex;
